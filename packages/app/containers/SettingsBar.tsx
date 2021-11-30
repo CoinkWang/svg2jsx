@@ -66,10 +66,10 @@ function SettingsBar({
       <Grid columns="2fr 1fr 2fr">
         <GridCell>
           <Grid columns="auto auto auto auto" justify="flex-start" gap={20}>
-            <Switch label="Functional" checked={isFunctional} onChange={onChangeType} />
+            {/* <Switch label="Functional" checked={isFunctional} onChange={onChangeType} /> */}
             <Switch label="Remove IDs" checked={cleanupIDs} onChange={onChangeIDs} />
             <Switch label="Single quotes" checked={jsxSingleQuote} onChange={onChangeQuote} />
-            <Switch label="Memo" checked={memo} onChange={onChangeMemo} />
+            {/* <Switch label="Memo" checked={memo} onChange={onChangeMemo} /> */}
           </Grid>
         </GridCell>
         <GridCell>

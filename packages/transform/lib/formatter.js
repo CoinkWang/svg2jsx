@@ -19,13 +19,12 @@ const TEMPLATES = {
     export default Icon;
   `,
   functional: `
-    import React from "react";
+    /* eslint-disable react/self-closing-comp */
+    import React from 'react'
     
-    function Icon() {
-      return <%= svg %>;
-    }
-
-    export default <%= exportComponent %>;
+    export const SomeIcon = props => (
+      <%= svg %>
+    )
   `,
 };
 
@@ -60,6 +59,10 @@ function format(svg, config) {
   const component = reactify(svg, config);
   const formatted = prettier.format(component, {
     ...config,
+    singleQuote: true, // 只影响模板，不影响 svg 中的引号
+    trailingComma: "es5",
+    semi: false, // 语句末不加分号
+    arrowParens: 'avoid', // 单个 prop 外层不需要括号
     parser: 'babel',
   });
 

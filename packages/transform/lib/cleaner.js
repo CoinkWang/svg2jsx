@@ -36,6 +36,7 @@ const PLUGINS = [
   { convertShapeToPath: true },
   { sortAttrs: true },
   { removeDimensions: false },
+  { addAttributesToSVGElement: { attributes:  ['TODO="请把本行替换成「{...props}」"'] }},
 ];
 
 /**
